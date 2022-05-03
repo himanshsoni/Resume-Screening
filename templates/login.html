@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'common.css'  %}">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="main-page">
+        <div class="form">
+          <form class="login-form" method="POST">
+            {% csrf_token %}
+            <input type="text" placeholder="email" name="email"/>
+            <input type="password" placeholder="password" name="password"/>
+            <select name="userType">
+                <option value="Recruiter">Recruiter</option>
+                <option value="Applicant">Applicant</option>
+            </select>
+            <button>login</button>
+            <p class="message">Not registered? <a href="/signup">Create an account</a></p>
+          </form>
+        </div>
+    </div>
+</body>
+</html>
